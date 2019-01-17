@@ -1,0 +1,3 @@
+rootProject.name = 'FaireLePlein'
+
+include ':app'
