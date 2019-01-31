@@ -32,13 +32,13 @@ function urlForQueryAndPage(key, value, pageNumber) {
 type Props = {};
 export default class SearchPage extends Component<Props> {
   static navigationOptions = {
-    title: 'Property Finder',
+    title: 'SearchPage',
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      searchString: 'london',
+      searchString: 'Paris',
       isLoading: false,
       message: '',
     };
@@ -77,37 +77,37 @@ export default class SearchPage extends Component<Props> {
   };
 
   render() {
-  	const spinner = this.state.isLoading ?
-      <ActivityIndicator size='large'/> : null;
+   	const spinner = this.state.isLoading ?
+       <ActivityIndicator size='large'/> : null;
 
-    return (
-      <View style={styles.container}>
-        <Text style={styles.description}>
-          Search for houses to buy!
-        </Text>
-        <Text style={styles.description}>
-          Search by place-name or postcode.
-        </Text>
-        <View style={styles.flowRight}>
-          <TextInput
-            underlineColorAndroid={'transparent'}
-            style={styles.searchInput}
-            value={this.state.searchString}
-            onChange={this._onSearchTextChanged}
-            placeholder='Search via name or postcode'/>
-          <Button
-            onPress={this._onSearchPressed}
-            color='#48BBEC'
-            title='Go'
-          />
-        </View>
-        <Image source={require('../resources/house.png')} style={styles.image}/>
-        {spinner}
-        <Text style={styles.description}>{this.state.message}</Text>
-      </View>
-    );
-  }
-}
+     return (
+       <View style={styles.container}>
+         <Text style={styles.description}>
+           Search for houses to buy!
+         </Text>
+         <Text style={styles.description}>
+           Search by place-name or postcode.
+         </Text>
+         <View style={styles.flowRight}>
+           <TextInput
+             underlineColorAndroid={'transparent'}
+             style={styles.searchInput}
+             value={this.state.searchString}
+             onChange={this._onSearchTextChanged}
+             placeholder='Search via name or postcode'/>
+           <Button
+             onPress={this._onSearchPressed}
+             color='#48BBEC'
+             title='Go'
+           />
+         </View>
+         <Image source={require('../resources/house.png')} style={styles.image}/>
+         {spinner}
+         <Text style={styles.description}>{this.state.message}</Text>
+       </View>
+     );
+   }
+ }
 
 const styles = StyleSheet.create({
   description: {
